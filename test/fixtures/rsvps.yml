@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  names: MyString
+  attending: false
+  level_of_participation: 1
+
+two:
+  names: MyString
+  attending: false
+  level_of_participation: 1
