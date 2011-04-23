@@ -30,4 +30,6 @@ gem 'sqlite3'
 group :development, :test do
   gem 'heroku'
   gem 'rspec-rails'
+  gem 'capybara', :git =>'git://github.com/jnicklas/capybara.git'
+  gem 'launchy'
 end

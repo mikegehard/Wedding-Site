@@ -10,14 +10,10 @@ class RsvpsController < ApplicationController
   def create
     @rsvp = Rsvp.new(params[:rsvp])
 
-    respond_to do |format|
-      if @rsvp.save
-        format.html { redirect_to(@rsvp, :notice => 'Rsvp was successfully created.') }
-        format.xml  { render :xml => @rsvp, :status => :created, :location => @rsvp }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @rsvp.errors, :status => :unprocessable_entity }
-      end
+    flash[:notice] = "Thanks for letting us know about your plans for our wedding!" if @rsvp.save
+
+    respond_with(@rsvp) do |format|
+      format.html { redirect_to root_path }
     end
   end
 
