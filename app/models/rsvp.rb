@@ -1,3 +1,3 @@
 class Rsvp < ActiveRecord::Base
-  validates :names, :presence => true
+  validates :names, :attending, :level_of_participation, :presence => true
 end
