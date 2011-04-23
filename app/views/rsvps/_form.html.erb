@@ -16,30 +16,27 @@
       <br/>
       <%= f.text_field :names %>
     </div>
+    <p>Are you coming to the wedding?</p>
     <div class="field">
-      <%= f.label :attending_1, "will be joining in the fun!" %>
-      <br/>
       <%= f.radio_button :attending, 1 %>
+      <%= f.label :attending_1, "will be joining in the fun!" %>
     </div>
     <div class="field">
-      <%= f.label :attending_0, "unfortunately must decline" %>
-      <br/>
       <%= f.radio_button :attending, 0 %>
+      <%= f.label :attending_0, "unfortunately must decline" %>
     </div>
+    <p>How much fun are you going to have?</p>
     <div class="field">
-      <%= f.label :level_of_participation_1, 'attend the ceremony' %>
-      <br/>
       <%= f.radio_button :level_of_participation, 1 %>
+      <%= f.label :level_of_participation_1, 'attend the ceremony' %>
     </div>
     <div class="field">
-      <%= f.label :level_of_participation_2, 'attend the afternoon potluck' %>
-      <br/>
       <%= f.radio_button :level_of_participation, 2 %>
+      <%= f.label :level_of_participation_2, 'attend the afternoon potluck' %>
     </div>
     <div class="field">
-      <%= f.label :level_of_participation_3, 'attend both' %>
-      <br/>
       <%= f.radio_button :level_of_participation, 3 %>
+      <%= f.label :level_of_participation_3, 'attend both' %>
     </div>
     <div class="actions">
       <%= f.submit 'Send RSVP'  %>
