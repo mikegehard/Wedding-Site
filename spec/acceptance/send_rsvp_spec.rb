@@ -8,7 +8,6 @@ feature "Rsvp'ing for the wedding" do
     choose("attend both")
     click_button("Send RSVP")
 
-    save_and_open_page
     page.should have_content("Thanks for letting us know about your plans for our wedding!")
 
   end
