@@ -1,5 +1,5 @@
 class PageController < ApplicationController
   def show
-    render 'pages/home'
+    render "pages/#{params["page_name"]}"
   end
 end
