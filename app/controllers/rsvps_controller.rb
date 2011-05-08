@@ -4,8 +4,9 @@ class RsvpsController < ApplicationController
   before_filter :authenticate, :only => [:index]
 
   def index
-    @rsvps = Rsvp.all
-    respond_with @rsvps
+#    @rsvps = Rsvp.all
+    render :text => "Hello world"
+#    respond_with @rsvps
   end
 
   def new
