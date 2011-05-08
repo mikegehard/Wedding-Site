@@ -26,18 +26,12 @@
       <%= f.label :attending_0, "unfortunately must decline" %>
     </div>
     <p>How much fun are you going to have?</p>
-    <div class="field">
-      <%= f.radio_button :level_of_participation, 1 %>
-      <%= f.label :level_of_participation_1, 'attend the ceremony' %>
-    </div>
-    <div class="field">
-      <%= f.radio_button :level_of_participation, 2 %>
-      <%= f.label :level_of_participation_2, 'attend the afternoon potluck' %>
-    </div>
-    <div class="field">
-      <%= f.radio_button :level_of_participation, 3 %>
-      <%= f.label :level_of_participation_3, 'attend both' %>
-    </div>
+    <% Rsvp::LEVELS_OF_PARTICIPATION.each_with_index do |level, index| %>
+        <div class="field">
+          <%= f.radio_button :level_of_participation, index %>
+          <%= f.label :"level_of_participation_#{index}", level %>
+        </div>
+    <% end %>
     <div class="actions">
       <%= f.submit 'Send RSVP'  %>
     </div>

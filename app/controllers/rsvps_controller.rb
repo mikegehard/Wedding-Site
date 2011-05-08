@@ -1,6 +1,13 @@
 class RsvpsController < ApplicationController
   respond_to :html
 
+  before_filter :authenticate, :only => [:index]
+
+  def index
+    @rsvps = Rsvp.all
+    respond_with @rsvps
+  end
+
   def new
     @rsvp = Rsvp.new
 
@@ -14,6 +21,14 @@ class RsvpsController < ApplicationController
 
     respond_with(@rsvp) do |format|
       format.html { @rsvp.persisted? ? redirect_to(root_path) : render('new') }
+    end
+  end
+
+  private
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |user, password|
+      (user == 'heather' || user == 'mike') && password == 'india4honeymoon'
     end
   end
 
